@@ -1,0 +1,238 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-glow: var(--primary-glow);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+}
+
+:root {
+  --radius: 0.875rem;
+  /* Formation Planet — dark cinematic theme with orange accent */
+  --background: oklch(0.13 0 0);            /* #0A0A0A */
+  --foreground: oklch(1 0 0);               /* #FFFFFF */
+  --surface: oklch(0.16 0 0);               /* #111111 */
+  --surface-elevated: oklch(0.19 0 0);      /* #1A1A1A */
+  --card: oklch(0.16 0 0);
+  --card-foreground: oklch(1 0 0);
+  --popover: oklch(0.16 0 0);
+  --popover-foreground: oklch(1 0 0);
+  --primary: oklch(0.72 0.21 45);           /* #FF6B00 orange */
+  --primary-foreground: oklch(0.13 0 0);
+  --primary-glow: oklch(0.78 0.19 50);
+  --secondary: oklch(0.22 0 0);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.2 0 0);
+  --muted-foreground: oklch(0.8 0 0);       /* #CCCCCC */
+  --accent: oklch(0.72 0.21 45);
+  --accent-foreground: oklch(0.13 0 0);
+  --destructive: oklch(0.6 0.22 25);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.72 0.21 45);
+
+  --gradient-hero: radial-gradient(ellipse at top, oklch(0.72 0.21 45 / 0.25), transparent 60%),
+                   linear-gradient(180deg, oklch(0.13 0 0) 0%, oklch(0.1 0 0) 100%);
+  --gradient-orange: linear-gradient(135deg, oklch(0.72 0.21 45) 0%, oklch(0.65 0.22 35) 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+
+  --shadow-glow: 0 0 32px rgba(255, 107, 0, 0.35);
+  --shadow-glow-sm: 0 0 16px rgba(255, 107, 0, 0.25);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.dark { color-scheme: dark; }
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 { letter-spacing: -0.02em; }
+}
+
+@layer utilities {
+  /* ===== Glassmorphism ===== */
+  .glass {
+    background:
+      linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02) 60%),
+      rgba(20, 20, 20, 0.45);
+    backdrop-filter: blur(14px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.08),
+      0 10px 30px -10px rgba(0,0,0,0.6);
+  }
+  .glass-strong {
+    background:
+      linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03) 60%),
+      rgba(15, 15, 15, 0.72);
+    backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid rgba(255, 107, 0, 0.22);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.10),
+      0 20px 50px -20px rgba(0,0,0,0.7);
+  }
+  /* Gradient-stroke glass card with conic-glow border on hover */
+  .glass-card {
+    position: relative;
+    background:
+      linear-gradient(135deg, rgba(255,255,255,0.07), rgba(255,255,255,0.015) 55%),
+      rgba(17, 17, 17, 0.55);
+    backdrop-filter: blur(16px) saturate(150%);
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.08),
+      0 12px 40px -16px rgba(0,0,0,0.7);
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .glass-card::before {
+    content: "";
+    position: absolute; inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: conic-gradient(from 120deg,
+      rgba(255,107,0,0) 0deg,
+      rgba(255,107,0,0.55) 90deg,
+      rgba(255,107,0,0) 180deg,
+      rgba(255,107,0,0.45) 270deg,
+      rgba(255,107,0,0) 360deg);
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .glass-card:hover::before { opacity: 1; animation: spinBorder 6s linear infinite; }
+  /* Sheen sweep */
+  .glass-card::after {
+    content: "";
+    position: absolute;
+    top: 0; left: -75%;
+    width: 50%; height: 100%;
+    background: linear-gradient(115deg,
+      transparent 0%,
+      rgba(255,255,255,0.10) 45%,
+      rgba(255,107,0,0.18) 50%,
+      rgba(255,255,255,0.10) 55%,
+      transparent 100%);
+    transform: skewX(-18deg);
+    transition: left 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .glass-card:hover::after { left: 125%; }
+
+  .glow-orange { box-shadow: var(--shadow-glow); }
+  .glow-orange-sm { box-shadow: var(--shadow-glow-sm); }
+  .text-gradient-orange {
+    background: var(--gradient-orange);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(255,107,0,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,107,0,0.06) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+  }
+  .bg-dots {
+    background-image: radial-gradient(rgba(255,107,0,0.18) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* ===== Animations ===== */
+  .pulse-glow { animation: pulseGlow 2.5s ease-in-out infinite; }
+  @keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 24px rgba(255,107,0,0.35); }
+    50%      { box-shadow: 0 0 48px rgba(255,107,0,0.65); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-12px); }
+  }
+  .float { animation: float 6s ease-in-out infinite; }
+
+  @keyframes spinBorder { to { transform: rotate(360deg); } }
+
+  @keyframes orbDrift {
+    0%, 100% { transform: translate3d(0,0,0) scale(1); opacity: 0.6; }
+    50%      { transform: translate3d(20px,-30px,0) scale(1.08); opacity: 0.85; }
+  }
+  .orb-drift { animation: orbDrift 9s ease-in-out infinite; }
+
+  @keyframes shimmerText {
+    0%   { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  .text-shimmer {
+    background: linear-gradient(90deg,
+      oklch(0.72 0.21 45) 0%,
+      oklch(0.92 0.15 70) 50%,
+      oklch(0.72 0.21 45) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+            background-clip: text;
+    color: transparent;
+    animation: shimmerText 4s linear infinite;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .animate-marquee { animation: marquee 7s linear infinite; }
+
+  @keyframes bokeh {
+    0%, 100% { transform: translateY(0) translateX(0); opacity: 0.35; }
+    50%      { transform: translateY(-24px) translateX(12px); opacity: 0.7; }
+  }
+  .bokeh { animation: bokeh 7s ease-in-out infinite; }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .pulse-glow, .float, .orb-drift, .text-shimmer, .animate-marquee, .bokeh {
+      animation: none !important;
+    }
+  }
+}

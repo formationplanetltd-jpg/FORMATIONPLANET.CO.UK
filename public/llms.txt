@@ -1,0 +1,50 @@
+# Formation Planet Ltd
+
+> Global business formation, compliance and banking. We help founders register UK Ltd and USA LLC companies in 24 hours and stay compliant with banking, tax and annual filings.
+
+## Pages
+
+- [Home](/): UK Ltd & USA LLC formation, banking and compliance overview.
+- [About](/about): Who we are and how we serve global founders.
+- [Pricing](/pricing): Transparent pricing for UK and USA packages.
+- [Contact](/contact): Get in touch with our specialists.
+- [FAQ](/faq): Common questions about formation, banking and compliance.
+
+## UK Services
+
+- [UK Services](/uk-services): All UK Ltd formation and compliance services.
+- [UK Ltd Formation](/uk-ltd-formation): Register a UK Limited company in 24 hours.
+- [UK Compliance](/uk-compliance): Annual filing, returns and statutory updates.
+- [LTD ID Verification](/ltd-id-verification): Mandatory PSC and director verification.
+- [Registered Office Address](/registered-office-address): Prestigious London business address.
+- [UK VAT Registration](/uk-vat-registration): HMRC VAT registration for UK Ltd companies.
+- [UTR Number](/utr-number): Apply for a UK Unique Taxpayer Reference.
+- [Annual Accounts](/annual-accounts): Year-end statutory accounts filing.
+- [Company Annual Filing](/company-annual-filing): Confirmation statements and updates.
+- [Authentication Code](/auth-code): Companies House authentication code service.
+- [Activation Code](/activation-code): HMRC online services activation.
+- [Director Change](/director-change): Add or remove company directors.
+- [Company Name Change](/company-name-change): Change registered company name.
+- [Address Change](/address-change): Update registered office or director address.
+- [PSC & Secretary Update](/psc-secretary-update): Update PSCs and secretaries.
+- [AD01 Postal Filing](/ad01-postal-filing): Sensitive postal AD01 filings.
+
+## USA Services
+
+- [USA Services](/usa-services): Wyoming, Delaware, Florida & more LLC formation.
+- [EIN](/ein): IRS Employer Identification Number for non-residents.
+- [ITIN](/itin): Individual Taxpayer Identification Number.
+- [BOI Report](/boi-report): FinCEN Beneficial Ownership Information filing.
+- [Annual Tax Filing](/annual-tax-filing): Form 5472 and 1120 filings.
+
+## Banking & Payments
+
+- [Banks & Payment Solutions](/banks-payment-solutions): Wise, Stripe, Payoneer, Mercury and 12+ partners.
+
+## Web Development
+
+- [Web Development](/web-development): Custom websites for founders.
+- [Basic Website](/web-basic): Starter websites.
+- [Standard Website](/web-standard): Business websites.
+- [Premium Website](/web-premium): High-conversion premium sites.
+- [E-commerce](/web-ecommerce): Online store builds.
